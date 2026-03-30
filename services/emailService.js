@@ -13,6 +13,7 @@ export const sendVerificationEmail = async (email, token) => {
  const verificationLink =
   `${process.env.BACKEND_URL || 'https://dyad-backend-server-dev.up.railway.app'}/api/verify-email?token=${token}`;
 
+
  await transporter.sendMail({
   from: process.env.EMAIL_USER,
   to: email,
