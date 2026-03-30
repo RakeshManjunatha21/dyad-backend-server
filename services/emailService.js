@@ -11,7 +11,7 @@ export const sendVerificationEmail = async (email, token) => {
  });
 
  const verificationLink =
-  `http://localhost:5000/api/verify-email?token=${token}`;
+  `${process.env.BACKEND_URL || 'https://dyad-backend-server-dev.up.railway.app'}/api/verify-email?token=${token}`;
 
  await transporter.sendMail({
   from: process.env.EMAIL_USER,
